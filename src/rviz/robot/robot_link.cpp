@@ -62,6 +62,7 @@
 
 #include <rviz/robot/robot_link.h>
 #include <rviz/robot/robot_joint.h>
+#include <filesystem>
 
 namespace fs = boost::filesystem;
 
