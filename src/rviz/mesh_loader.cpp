@@ -61,6 +61,7 @@
 #include <assimp/IOStream.hpp>
 #include <assimp/IOSystem.hpp>
 #include <boost/filesystem/operations.hpp>
+#include <filesystem>
 
 namespace fs = boost::filesystem;
 
@@ -408,7 +409,7 @@ void loadTexture(const std::string& resource_path)
     {
       Ogre::DataStreamPtr stream(new Ogre::MemoryDataStream(res.data.get(), res.size));
       Ogre::Image image;
-      std::string extension = fs::extension(fs::path(resource_path));
+      std::string extension = std::filesystem::path(resource_path).extension().string();
 
       if (extension[0] == '.')
       {
